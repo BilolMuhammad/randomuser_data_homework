@@ -12,6 +12,3 @@ def get_data(filename: str) -> dict:
     """
     f = open(filename).read()
     return json.loads(f)
-
-
-print(get_data('randomuser_data.json'))
