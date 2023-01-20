@@ -14,7 +14,7 @@ def get_count_users(data: dict) -> int:
     """
     sum = 0
     for n in range(len(data['results'])):
-        sum = n
+        sum = n+1
     return sum
 
 
