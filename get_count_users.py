@@ -1,7 +1,9 @@
 from webbrowser import get
 import get_data
+import json
 
-def get_count_users(data:dict) -> int:
+
+def get_count_users(data: dict) -> int:
     """
     You are given dictionary. Find the number of users.
 
@@ -10,4 +12,12 @@ def get_count_users(data:dict) -> int:
     Returns:
         int: number of users
     """
-    
+    sum = 0
+    for n in range(len(data['results'])):
+        sum = n
+    return sum
+
+
+f = open('randomuser_data.json').read()
+data = json.loads(f)
+print(get_count_users(data))
