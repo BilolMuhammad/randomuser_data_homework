@@ -22,8 +22,8 @@ def get_gender_users(data: dict) -> list:
             Male['Male'] = 1
             Female['Female'] = 0
         else:
+            Male['Male'] = 0
             Female['Female'] = 1
-            Male['Female'] = 0
             male = Male.copy()
             female = Female.copy()
             users_gender.append(male)
