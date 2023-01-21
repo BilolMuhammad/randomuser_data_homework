@@ -13,12 +13,15 @@ def get_users_data(data: dict) -> list:
     Returns:
         list: users data list
     """
-    data_user = []
+    dic = {}
+    list_data = []
     for n in range(len(data['results'])):
-        data_user.append(data['results'][n]['name']['first'])
-        data_user.append(data['results'][n]['name']['last'])
-        data_user.append(data['results'][n]['phone'])
-    return data_user
+        dic['first_name'] = data['results'][n]['name']['first']
+        dic['last_name'] = data['results'][n]['name']['last']
+        dic['phone_number'] = data['results'][n]['phone']
+        dictionary = dic.copy()
+        list_data.append(dictionary)
+    return list_data
 
 
 data = get_data.get_data('randomuser_data.json')
