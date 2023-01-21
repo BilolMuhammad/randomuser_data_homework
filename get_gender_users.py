@@ -15,16 +15,20 @@ def get_gender_users(data: dict) -> list:
         list: users get gender list
     """
     users_gender = []
-    dic = {}
+    Male = {}
+    Female = {}
     for n in range(len(data['results'])):
         if data['results'][n]['gender'] == 'male':
-            dic['Male'] = 1
-            dic['Female'] = 0
+            Male['Male'] = 1
+            Female['Female'] = 0
         else:
-            dic['Female'] = 1
-            dic['Female'] = 0
-            dictionary = dic.copy()
-            users_gender.append(dictionary)
+            Female['Female'] = 1
+            Male['Female'] = 0
+            male = Male.copy()
+            female = Female.copy()
+            users_gender.append(male)
+            users_gender.append(female)
+
     return users_gender
 
 
