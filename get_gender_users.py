@@ -14,22 +14,14 @@ def get_gender_users(data: dict) -> list:
     Returns:
         list: users get gender list
     """
-    users_gender = []
-    Male = {}
-    Female = {}
-    for n in range(len(data['results'])):
-        if data['results'][n]['gender'] == 'male':
-            Male['Male'] = 1
-            Female['Female'] = 0
+    list = []
+    results = data['results']
+    for user in results:
+        if user['gender'] == 'male':
+            list.append({'Male': 1})
         else:
-            Male['Male'] = 0
-            Female['Female'] = 1
-            male = Male.copy()
-            female = Female.copy()
-            users_gender.append(male)
-            users_gender.append(female)
-
-    return users_gender
+            list.append({'Female': 0})
+    return list
 
 
 data = get_data.get_data('randomuser_data.json')
